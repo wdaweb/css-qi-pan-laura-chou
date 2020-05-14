@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+            font-family: 'Noto Sans TC', 'Microsoft JhengHei', sans-serif;
+            box-sizing: border-box;
+        }
+
+        html,
+        body {
+            height: 100%;
+            background-image: url('https://images.pexels.com/photos/139306/pexels-photo-139306.jpeg?cs=srgb&dl=wood-timber-brown-lumber-139306.jpg&fm=jpg');
+        }
+
+        body {
+            padding: 1rem;
+        }
+
+        .container {
+            width: auto;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .row {
+            height: 100%;
+            flex-wrap: wrap;
+            text-align: center;
+            font-family: '標楷體';
+            font-weight: bolder;
+        }
+
+        #left {
+            width: 4%;
+            font-size: 38px;
+            border: 1px;
+        }
+
+        #outline {
+            width: 1000px;
+            height: 100%;
+            border: 2px solid black;
+            position: relative;
+            background: #f1cb9d;
+        }
+
+        #chess {
+            text-align: center;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .circle {
+            width: 60px;
+            height: 60px;
+            border: 1px solid black;
+            box-shadow: 0px 5px darkblue;
+            border-radius: 50%;
+            background: #fff;
+        }
+
+        .cs1 {
+            position: absolute;
+            top: -1%;
+            width: 98%;
+            z-index: 999;
+        }
+
+        .cs2 {
+            position: absolute;
+            top: 19%;
+            width: 52%;
+            z-index: 999;
+        }
+
+        .cs3 {
+            position: absolute;
+            top: 30%;
+            width: 98%;
+            z-index: 999;
+        }
+
+        .cs4 {
+            position: absolute;
+            bottom: 1%;
+            width: 98%;
+            z-index: 999;
+        }
+
+        .cs5 {
+            position: absolute;
+            bottom: 21%;
+            width: 52%;
+            z-index: 999;
+        }
+
+        .cs6 {
+            position: absolute;
+            bottom: 32%;
+            width: 98%;
+            z-index: 999;
+        }
+
+        .circle span {
+            font-size: 40px;
+        }
+
+        #center {
+            width: 92%;
+            height: 100%;
+            flex-direction: column;
+            margin: 2% 4%;
+        }
+
+        #right {
+            width: 4%;
+            height: 100%;
+            font-size: 38px;
+        }
+
+        #top {
+            height: auto;
+            background: #f1cb9d;
+        }
+
+        #middle {
+            height: 10%;
+            font-size: 50px;
+            border: 1px solid black;
+            align-items: center;
+            display: flex;
+            background: #fff;
+        }
+
+        #bottom {
+            height: auto;
+            background: #f1cb9d;
+        }
+
+        .flex {
+            flex: 1;
+        }
+
+        .square {
+            border: 1px solid black;
+            height: 100px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .col-square {
+            width: 100%;
+            display: flex;
+        }
+
+        .line {
+            position: absolute;
+            width: 250%;
+            border-bottom: 2px solid black;
+            transform: rotate(63deg);
+            top: 50%;
+            left: -75%;
+        }
+
+        .line2 {
+            position: absolute;
+            width: 250%;
+            border-bottom: 2px solid black;
+            transform: rotate(117deg);
+            top: 50%;
+            left: -75%;
+        }
+
+
+        @media (min-width: 500px) {
+            .line {
+                width: 210%;
+                transform: rotate(61deg);
+                top: 50%;
+                left: -55%;
+            }
+
+            .line2 {
+                width: 210%;
+                transform: rotate(119deg);
+                top: 50%;
+                left: -55%;
+            }
+        }
+
+        @media (min-width: 600px) {
+            .line {
+                transform: rotate(59deg);
+            }
+
+            .line2 {
+                transform: rotate(121deg);
+            }
+        }
+
+        @media (min-width: 700px) {
+            .line {
+                transform: rotate(54deg);
+            }
+
+            .line2 {
+                transform: rotate(126deg);
+            }
+        }
+
+        @media (min-width: 800px) {
+            .line {
+                transform: rotate(46deg);
+            }
+
+            .line2 {
+                transform: rotate(134deg);
+            }
+        }
+
+        @media (min-width: 1000px) {
+            .line {
+                transform: rotate(41deg);
+            }
+
+            .line2 {
+                transform: rotate(139deg);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div id="left" class="row">棋盤裡<br>，車無輪<br>，馬無韁<br>，叫聲將軍提防提防</div>
+        <div id='outline'>
+            <div id="chess" class="cs1" style="margin-left: 1%; ">
+                <div class="circle"><span>車</span></div>
+                <div class="circle"><span>馬</span></div>
+                <div class="circle"><span>象</span></div>
+                <div class="circle"><span>士</span></div>
+                <div class="circle"><span>將</span></div>
+                <div class="circle"><span>士</span></div>
+                <div class="circle"><span>象</span></div>
+                <div class="circle"><span>馬</span></div>
+                <div class="circle"><span>車</span></div>
+            </div>
+            <div id="chess" class="cs2" style="margin-left: 24%;">
+                <div class="circle"><span>包</span></div>
+                <div class="circle"><span>包</span></div>
+            </div>
+            <div id="chess" class="cs3" style="margin-left: 1%;">
+                <div class="circle"><span>卒</span></div>
+                <div class="circle"><span>卒</span></div>
+                <div class="circle"><span>卒</span></div>
+                <div class="circle"><span>卒</span></div>
+                <div class="circle"><span>卒</span></div>
+            </div>
+            <div id="center" class="row">
+                <div id="top" class="col">
+                    <div class="col-square">
+                        <div class="flex square"></div>
+                        <div class="flex square"></div>
+                        <div class="flex square"></div>
+                        <div class="flex square">
+                            <div class="line"></div>
+                        </div>
+                        <div class="flex square">
+                            <div class="line2"></div>
+                        </div>
+                        <div class="flex square"></div>
+                        <div class="flex square"></div>
+                        <div class="flex square"></div>
+                    </div>
+                    <div class="col-square">
+                        <div class="flex square"></div>
+                        <div class="flex square"></div>
+                        <div class="flex square"></div>
+                        <div class="flex square">
+                            <div class="line2"></div>
+                        </div>
+                        <div class="flex square">
+                            <div class="line"></div>
+                        </div>
+                        <div class="flex square"></div>
+                        <div class="flex square"></div>
+                        <div class="flex square"></div>
+                    </div>
+                    <div class="col-square">
+                        <div class="flex square"></div>
+                        <div class="flex square"></div>
+                        <div class="flex square"></div>
+                        <div class="flex square"></div>
+                        <div class="flex square"></div>
+                        <div class="flex square"></div>
+                        <div class="flex square"></div>
+                        <div class="flex square"></div>
+                    </div>
+                    <div class="col-square">
+                        <div class="flex square"></div>
+                        <div class="flex square"></div>
+                        <div class="flex square"></div>
+                        <div class="flex square"></div>
+                        <div class="flex square"></div>
+                        <div class="flex square"></div>
+                        <div class="flex square"></div>
+                        <div class="flex square"></div>
+                    </div>
+                </div>
+                <div id="middle" class="col">
+                    <div class="flex">楚河</div>
+                    <div class="flex">漢界</div>
+                </div>
+                <div id="bottom" class="col">
+                    <div class="col-square">
+                        <div class="flex square"></div>
+                        <div class="flex square"></div>
+                        <div class="flex square"></div>
+                        <div class="flex square"></div>
+                        <div class="flex square"></div>
+                        <div class="flex square"></div>
+                        <div class="flex square"></div>
+                        <div class="flex square"></div>
+                    </div>
+                    <div class="col-square">
+                        <div class="flex square"></div>
+                        <div class="flex square"></div>
+                        <div class="flex square"></div>
+                        <div class="flex square"></div>
+                        <div class="flex square"></div>
+                        <div class="flex square"></div>
+                        <div class="flex square"></div>
+                        <div class="flex square"></div>
+                    </div>
+                    <div class="col-square">
+                        <div class="flex square"></div>
+                        <div class="flex square"></div>
+                        <div class="flex square"></div>
+                        <div class="flex square">
+                            <div class="line"></div>
+                        </div>
+                        <div class="flex square">
+                            <div class="line2"></div>
+                        </div>
+                        <div class="flex square"></div>
+                        <div class="flex square"></div>
+                        <div class="flex square"></div>
+                    </div>
+                    <div class="col-square">
+                        <div class="flex square"></div>
+                        <div class="flex square"></div>
+                        <div class="flex square"></div>
+                        <div class="flex square">
+                            <div class="line2"></div>
+                        </div>
+                        <div class="flex square">
+                            <div class="line"></div>
+                        </div>
+                        <div class="flex square"></div>
+                        <div class="flex square"></div>
+                        <div class="flex square"></div>
+                    </div>
+                </div>
+            </div>
+            <div id="chess" class="cs4" style="color: red; margin-left: 1%;">
+                <div class="circle"><span>車</span></div>
+                <div class="circle"><span>馬</span></div>
+                <div class="circle"><span>象</span></div>
+                <div class="circle"><span>士</span></div>
+                <div class="circle"><span>將</span></div>
+                <div class="circle"><span>士</span></div>
+                <div class="circle"><span>象</span></div>
+                <div class="circle"><span>馬</span></div>
+                <div class="circle"><span>車</span></div>
+            </div>
+            <div id="chess" class="cs5" style="margin-left: 24%; color: red; ">
+                <div class="circle"><span>包</span></div>
+                <div class="circle"><span>包</span></div>
+            </div>
+            <div id="chess" class="cs6" style="color: red; margin-left: 1%;">
+                <div class=" circle"><span>卒</span></div>
+                <div class="circle"><span>卒</span></div>
+                <div class="circle"><span>卒</span></div>
+                <div class="circle"><span>卒</span></div>
+                <div class="circle"><span>卒</span></div>
+            </div>
+        </div>
+        <div id="right" class="row">圖書裡<br>，龍不吟<br>，虎不嘯<br>，小小書僮可笑可笑</div>
+    </div>
+</body>
+
+</html>
